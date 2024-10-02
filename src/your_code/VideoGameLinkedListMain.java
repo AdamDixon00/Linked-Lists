@@ -1,9 +1,6 @@
 package your_code;
 /**
- * Name:        <Adam Dixon>
- * CIN:         <304772993>
- * Course:      <CS 2013-07>
- * Section:     <34334>
+ * Author:        <Adam Dixon>
  **/
 
 import java.io.File;
@@ -11,7 +8,7 @@ import dont_change_this_code.*;
 
 public class VideoGameLinkedListMain {
 	public static void main(String[] args) {
-		VideoGameLinkedList gameList = VideoGameReader.parseData(new File("/Users/adamdixon/Documents/Homework06/src/game_data_files/video_game_data.csv"));
+		VideoGameLinkedList gameList = VideoGameReader.parseData(new File("src\\game_data_files\\video_game_data.csv"));
         // Print out the size of the list
         System.out.println("Size of list: " + gameList.size());
 

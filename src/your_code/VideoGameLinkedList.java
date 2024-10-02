@@ -1,9 +1,6 @@
 package your_code;
 /**
- * Name:        <Adam Dixon>
- * CIN:         <304772993>
- * Course:      <CS 2013-07>
- * Section:     <34334>
+ * Author:        <Adam Dixon>
  **/
 import java.util.Comparator;
 
@@ -14,19 +11,6 @@ import dont_change_this_code.VideoGameNode;
  * 
  * This is the class that you are responsible for implementing.  Please read the
  * comments very carefully. 
- * 
- * In order to correctly implement the methods, you will need to study the
- * algorithms presented in the LinkedList lecture slides.
- * 
- * Restrictions:
- * 		-You are NOT allowed to use any other data structures.  If you do, no
- * 		credit will be given for your submission.
- * 		-You are NOT allowed to change any of the method headers.
- * 		-You are NOT allowed to change any methods that are already completed.
- * 		-You are NOT allowed to add any other methods.
- * 
- * @author Prof. Keenan Knaur | California State University, Los Angeles | CS2013
- * @author (YOUR INFORMATION GOES HERE)
  */
 public class VideoGameLinkedList {
 	private VideoGameNode head;
@@ -40,10 +24,7 @@ public class VideoGameLinkedList {
 	}
 
 	/**
-	 * You will need to complete this method so that it takes the VideoGame object
-	 * and adds it to the end of the VideoGameLinkedList.
-	 * 
-	 * @param game The VideoGame object to be added.
+	 * This method takes the VideoGame object and adds it to the end of the VideoGameLinkedList.
 	 */
 	public void addLastVideoGame(VideoGame game) {
 		VideoGameNode temp = new VideoGameNode(game);
@@ -62,10 +43,8 @@ public class VideoGameLinkedList {
 	}
 
 	/**
-	 * You will need to complete this method so that it takes the VideoGame object
-	 * and adds it to the beginning of the VideoGameLinkedList.
-	 * 
-	 * @param game The VideoGame object to be added.
+	 * This method takes the VideoGame object and adds it to the beginning of 
+	 * the VideoGameLinkedList.
 	 */
 	public void addFirstVideoGame(VideoGame game) {
 	VideoGameNode temp = new VideoGameNode(game);
@@ -79,21 +58,9 @@ public class VideoGameLinkedList {
 }
 
 	/**
-	 * You will need to complete this method so that it takes the VideoGame object
-	 * and inserts it anywhere within the list. 
-	 * 
-	 * This method must validate that the index is within the correct bounds 
-	 * and throw an IndexOutOfBoundsException if the index is not correct.
-	 * 
-	 * NOTE: Make sure the upper bound of the index validation is correct.  For
-	 * this method the index validation must allow an index == size in order to
-	 * add a new node to the end of the list.
-	 * 
-	 * @param game	 The VideoGame object to add.
-	 * @param index  The index of where the new VideoGame object should be inserted.
-	 * 		
-	 * @throws IndexOutOfBoundsException Throws this exception when the index is
-	 * out of bounds.
+	 * This method takes the VideoGame object and inserts it anywhere within the list. 
+	 * This method validates the index within the correct bounds and throw an
+	 *  IndexOutOfBoundsException if the index is not correct.
 	 */
 	public void insertVideoGame(VideoGame game, int index) 
 			throws IndexOutOfBoundsException {
@@ -123,13 +90,9 @@ public class VideoGameLinkedList {
 
 
 	/**
-	 * This method must be implemented to correctly remove and return the first 
+	 * This method removes and returns the first 
 	 * VideoGame object from the list.  If the list is empty, throw an 
 	 * IllegalStateException.
-	 * 
-	 * @return	The VideoGame object that was removed.
-	 * 
-	 * @throws IllegalStateException When the list is empty.
 	 */
 	public VideoGame removeFirstVideoGame() 
 	throws IllegalStateException {
@@ -151,13 +114,9 @@ public class VideoGameLinkedList {
 }
 
 	/**
-	 * This method must be implemented to correctly remove and return the last 
-	 * VideoGame object from the list.  If the list is empty, throw an 
+	 * This method removes and returns the last 
+	 * VideoGame object from the list. If the list is empty, throw an 
 	 * IllegalStateException.
-	 * 
-	 * @return	The VideoGame object that was removed.
-	 * 
-	 * @throws IllegalStateException When the list is empty.
 	 */
 	public VideoGame removeLastVideoGame() throws IllegalStateException {
 	if (size == 0) {
@@ -188,15 +147,10 @@ public class VideoGameLinkedList {
 }
 
 	/**
-	 * This method must be implemented to correctly remove and return the a 
+	 * This method removes and returns the a 
 	 * VideoGame object from anywhere in the list.  If the list is empty, throw an 
-	 * IllegalStateException.  If the index is out of bounds, throw an
+	 * IllegalStateException. If the index is out of bounds, throw an
 	 * IndexOutOfBoundsException.
-	 * 
-	 * @return	The VideoGame object that was removed.
-	 * 
-	 * @throws IllegalStateException When the list is empty.
-	 * @throws IndexOutOfBoundsException When the index is out of bounds.
 	 */
 	public VideoGame removeVideoGame(int index) throws IndexOutOfBoundsException, IllegalStateException {
 		if (head == null) {
@@ -226,16 +180,9 @@ public class VideoGameLinkedList {
 	}
 
 	/**
-	 * This method must be implemented to return the VideoGame object at the 
-	 * given index.  If the index is out of bounds throw an 
-	 * IndexOutOfBoundsException.  
-	 * 
-	 * NOTE: You are returning the VideoGame object encapsulated by the
-	 * VideoGameNode.  You are NOT returning the Node itself.
-	 * 
-	 * @param index		The index of the VideoGame that you want to return.
-	 * 
-	 * @return	The VideoGame object at the given index.
+	 * This method returns the VideoGame object at the 
+	 * given index. If the index is out of bounds throw an 
+	 * IndexOutOfBoundsException.
 	 */
 	public VideoGame getVideoGame(int index) {
 		if (index < 0 || index >= size) {
@@ -250,24 +197,8 @@ public class VideoGameLinkedList {
 
 	/**
 	 * Method to sort the VideoGameLinkedList using the given comparator.
-	 * We will be able to sort the list by title of each video game, price, or
+	 * Sort the list by title of each video game, price, or
 	 * peak player count depending on which comparator we give to the sort method.
-	 * 
-	 * Use the following sorting pseudocode to help you sort your nodes, this is
-	 * the same sorting algorithm that we used in a previous assignment.
-	 *		while the list is not sorted:
-	 *	   		for each adjacent pair of items: 
-	 *	      		if the pair of items are out of order: 
-	 *	         		swap the pair of items
-	 * 
-	 * HINT 1: For the "swapping" part of this sorting algorithm, think of how you
-	 * can interchange the positions of two nodes in this linked list by using
-	 * ONLY the other methods in this class.
-	 * 
-	 * HINT 2: There are three general cases to consider, the list has a size of 1,
-	 * the list has a size of 2, the list has any other size.
-	 * 
-	 * @param comparator 	A Comparator object which is used to sort this list.
 	 */
 	public void sort(Comparator<VideoGame> comparator) {   
 		// handle cases where the list has a size of 1 or 2
@@ -303,10 +234,8 @@ public class VideoGameLinkedList {
 	}
 
 	/**
-	 * This method should be implemented to return the correct size of the list
-	 * at any given time.  This method should be implemented in O(1) time.
-	 * 
-	 * @return	An int that is the size of the list.
+	 * This method returns the correct size of the list
+	 * at any given time. This method is in O(1) time.
 	 */
 	public int size() {
 		int count = 0;
@@ -320,10 +249,8 @@ public class VideoGameLinkedList {
 }
 
 	/**
-	 * This method should return true if the list is not empty, and false if the
+	 * This returns true if the list is not empty, and false if the
 	 * list is empty.
-	 * 
-	 * @return	A boolean indicating whether or not the list is empty.
 	 */
 	public boolean isEmpty() {
 		return head == null;
@@ -331,8 +258,6 @@ public class VideoGameLinkedList {
 
 	/**
 	 * This method returns a String representation of this LinkedList  
-	 * 
-	 * DO NOT CHANGE THIS METHOD.
 	 */
 	@Override
 	public String toString() {	

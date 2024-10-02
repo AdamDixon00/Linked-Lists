@@ -1,13 +1,7 @@
 package dont_change_this_code;
 
 /**
- * 
  * Simple class to store some information about a VideoGame.
- * 
- * DO NOT CHANGE ANY OF THIS CODE!!!
- * 
- * @author Prof. Keenan Knaur | California State University, Los Angeles | CS2013
- *
  */
 public class VideoGame {
 	private String title;
